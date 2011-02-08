@@ -1,0 +1,17 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3446
+
+This plugin does not do anything by itself. This is a recursive-descent
+JSON parser intended to be called from other Vim plugins or scripts.
+Although it is possible to parse JSON in Vim using eval(), that is
+dangerous if the JSON is from an untrusted source.
+
+Note: true, false, and null are parsed to 1, 0, and {} respectively because
+there are no equivalents to those values in Vim script.
+
+Usage:
+    let result = ParseJSON(json_str)
+
+Example:
+    :echo ParseJSON('{ "hello" : { "a list" : [ 1, 2, "world", true ] }}')
+    {'hello': {'a list': [1, 2, 'world', 1]}}
+
